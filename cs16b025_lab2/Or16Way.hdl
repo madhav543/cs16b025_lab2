@@ -1,0 +1,8 @@
+CHIP Or16Way {
+	IN ip1[16];
+	OUT out;
+	PARTS:
+	Or8Way(ip1=ip1[0..7], out=c1);
+	Or8Way(ip1=ip1[8..15], out=c2);
+	Or(ip1=c1, ip2=c2, out=out);
+}

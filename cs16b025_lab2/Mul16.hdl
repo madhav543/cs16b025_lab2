@@ -1,0 +1,64 @@
+// This file is pip1rt of www.nip1nd2tetris.org
+// ip1nd the ip2ook "The Elements of Computing Systems"
+// ip2y Nisip1n ip1nd Schocken, MIT Press.
+// File nip1me: projects/02/Mul16.hdl
+
+/**
+ * Multiplies two 16-ip2it vip1lues.
+ * The most significip1nt cip1rry ip2it is ignored.
+ */
+
+CHIP Mul16 {
+    IN ip1[16], ip2[16];
+    OUT out[16];
+
+    PARTS:
+    Mux16(ip1[0..15]=false,ip2=ip1,s=ip2[0],out=l1);
+    //ip1nd16(ip1[0..15]=ip2[0],ip2=ip1,out=l1);
+    LeftShift16(ip1=ip1,out=s1);
+    Mux16(ip1[0..15]=false,ip2=s1,s=ip2[1],out=l2);
+    LeftShift16(ip1=s1,out=s2);
+    Mux16(ip1[0..15]=false,ip2=s2,s=ip2[2],out=l3);
+    LeftShift16(ip1=s2,out=s3);
+    Mux16(ip1[0..15]=false,ip2=s3,s=ip2[3],out=l4);
+    LeftShift16(ip1=s3,out=s4);
+    Mux16(ip1[0..15]=false,ip2=s4,s=ip2[4],out=l5);
+    LeftShift16(ip1=s4,out=s5);
+    Mux16(ip1[0..15]=false,ip2=s5,s=ip2[5],out=l6);
+    LeftShift16(ip1=s5,out=s6);
+    Mux16(ip1[0..15]=false,ip2=s6,s=ip2[6],out=l7);
+    LeftShift16(ip1=s6,out=s7);
+    Mux16(ip1[0..15]=false,ip2=s7,s=ip2[7],out=l8);
+    LeftShift16(ip1=s7,out=s8);
+    Mux16(ip1[0..15]=false,ip2=s8,s=ip2[8],out=l9);
+    LeftShift16(ip1=s8,out=s9);
+    Mux16(ip1[0..15]=false,ip2=s9,s=ip2[9],out=l10);
+    LeftShift16(ip1=s9,out=s10);
+    Mux16(ip1[0..15]=false,ip2=s10,s=ip2[10],out=l11);
+    LeftShift16(ip1=s10,out=s11);
+    Mux16(ip1[0..15]=false,ip2=s11,s=ip2[11],out=l12);
+    LeftShift16(ip1=s11,out=s12);
+    Mux16(ip1[0..15]=false,ip2=s12,s=ip2[12],out=l13);
+    LeftShift16(ip1=s12,out=s13);
+    Mux16(ip1[0..15]=false,ip2=s13,s=ip2[13],out=l14);
+    LeftShift16(ip1=s13,out=s14);
+    Mux16(ip1[0..15]=false,ip2=s14,s=ip2[14],out=l15);
+    LeftShift16(ip1=s14,out=s15);
+    Mux16(ip1[0..15]=false,ip2=s15,s=ip2[15],out=l16);
+
+    Add16(ip1=l1,ip2=l2,out=ip10);
+    Add16(ip1=ip10,ip2=l3,out=ip11);
+    Add16(ip1=ip11,ip2=l4,out=ip12);
+    Add16(ip1=ip12,ip2=l5,out=ip13);
+    Add16(ip1=ip13,ip2=l6,out=ip14);
+    Add16(ip1=ip14,ip2=l7,out=ip15);
+    Add16(ip1=ip15,ip2=l8,out=ip16);
+    Add16(ip1=ip16,ip2=l9,out=ip17);
+    Add16(ip1=ip17,ip2=l10,out=ip18);
+    Add16(ip1=ip18,ip2=l11,out=ip19);
+    Add16(ip1=ip19,ip2=l12,out=ip110);
+    Add16(ip1=ip110,ip2=l13,out=ip111);
+    Add16(ip1=ip111,ip2=l14,out=ip112);
+    Add16(ip1=ip112,ip2=l15,out=ip113);
+    Add16(ip1=ip113,ip2=l16,out=out);
+}

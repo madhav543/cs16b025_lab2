@@ -1,0 +1,33 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Inc16.hdl
+
+/**
+ * 16-bit incrementer:
+ * out = in + 1 (arithmetic addition)
+ */
+
+CHIP Inc16 {
+    IN ip1[16];
+    OUT out[16];
+
+    PARTS:
+   // Put you code here:
+   HalfAdder(ip1=ip1[0],ip2=true,sum=out[0],carry=c1);
+   HalfAdder(ip1=c1,ip2=ip1[1],sum=out[1],carry=c2);
+   HalfAdder(ip1=c2,ip2=ip1[2],sum=out[2],carry=c3);
+   HalfAdder(ip1=c3,ip2=ip1[3],sum=out[3],carry=c4);
+   HalfAdder(ip1=c4,ip2=ip1[4],sum=out[4],carry=c5);
+   HalfAdder(ip1=c5,ip2=ip1[5],sum=out[5],carry=c6);
+   HalfAdder(ip1=c6,ip2=ip1[6],sum=out[6],carry=c7);
+   HalfAdder(ip1=c7,ip2=ip1[7],sum=out[7],carry=c8);
+   HalfAdder(ip1=c8,ip2=ip1[8],sum=out[8],carry=c9);
+   HalfAdder(ip1=c9,ip2=ip1[9],sum=out[9],carry=c10);
+   HalfAdder(ip1=c10,ip2=ip1[10],sum=out[10],carry=c11);
+   HalfAdder(ip1=c11,ip2=ip1[11],sum=out[11],carry=c12);
+   HalfAdder(ip1=c12,ip2=ip1[12],sum=out[12],carry=c13);
+   HalfAdder(ip1=c13,ip2=ip1[13],sum=out[13],carry=c14);
+   HalfAdder(ip1=c14,ip2=ip1[14],sum=out[14],carry=c15);
+   HalfAdder(ip1=c15,ip2=ip1[15],sum=out[15],carry=carry);
+}

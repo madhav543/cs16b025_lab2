@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Adder16.hdl
+
+/**
+ * Adds two 16-bit values.
+ * The most significant carry bit is ignored.
+ */
+
+CHIP Add32 {
+    IN ip1[32], ip2[32];
+    OUT out[32],carry;
+
+    PARTS:
+   // Put you code here:
+   And16(ip1[0..15]=ip1[0..16],ip2[0..15]=ip2[0..15],out[0..15]=out[0..15],carry=c1);
+   
+}
